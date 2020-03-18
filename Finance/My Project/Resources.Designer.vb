@@ -63,9 +63,9 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property bControl_fw() As System.Drawing.Bitmap
+        Friend ReadOnly Property bimport_fw32x32_fw() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("bControl.fw", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("bimport.fw32x32.fw", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -83,16 +83,6 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Extract_fw() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Extract.fw", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property ilot_fw() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("ilot.fw", resourceCulture)
@@ -103,9 +93,19 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Param_fw() As System.Drawing.Bitmap
+        Friend ReadOnly Property Param2_fw() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Param.fw", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Param2.fw", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property processCube_fw() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("processCube.fw", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

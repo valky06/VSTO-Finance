@@ -1,13 +1,12 @@
 ﻿Imports System.Data
-'Imports System.IO
-'Imports System.Data.SqlClient
-'Imports System.Collections.ObjectModel
+Imports Microsoft.SqlServer.Management.IntegrationServices
+Imports System.IO
+Imports System.Data.SqlClient
+Imports System.Collections.ObjectModel
 'Imports Microsoft.Office.Interop
 
 Public Module Common
     Public SqlCon As New OleDb.OleDbConnection
-
-    Public Modedebug As Boolean = False
 
 #Region "Factor"
     Function num2Fact(a As Integer, Nbcar As Integer) As String
@@ -138,6 +137,18 @@ Public Module Common
         Return s
     End Function
 
+    Function Cell2Sql(a As Excel.Range) As String
+        Select Case a.GetType.Name
+            Case "String"
+                Return Txt2sql(a.Value)
+            Case "DateTime"
+                Return Txt2sql(a.Value)
+            Case "Boolean"
+                Return a.Value
+            Case Else
+                Return Txt2sql(a.Value).Replace(",", ".")
+        End Select
+    End Function
 #End Region
 
 #Region "SQL"
@@ -172,7 +183,7 @@ Public Module Common
         End Try
     End Function
 
-    Function SqlDo(ByVal s As String, ByVal consql As OleDb.OleDbConnection) As Integer
+    Function SqlDo(ByVal s As String, ByVal consql As OleDb.OleDbConnection) As Boolean
         Dim lareq As New OleDb.OleDbCommand
         Try
             If consql.State <> ConnectionState.Open Then consql.Open()
@@ -180,10 +191,10 @@ Public Module Common
             lareq.Connection = consql
             lareq.CommandType = CommandType.Text
             lareq.ExecuteNonQuery()
-            Return 0
+            Return True
         Catch ex As Exception
             MsgBox(ex.Message & s)
-            Return 1
+            Return False
             'Throw New Exception("Erreur Execution requête")
         End Try
     End Function
@@ -198,7 +209,7 @@ Public Module Common
             lareq.CommandType = CommandType.Text
             Return lareq.ExecuteReader()
         Catch ex As Exception
-            If Modedebug Then MsgBox(ex.Message & s)
+            MsgBox(ex.Message & s)
             'Throw New Exception(ex.Message) 'TODO: vérifier la gestion de l'erreur
             Return Nothing
         End Try
@@ -498,6 +509,73 @@ Public Module Common
 
 
     End Function
+#End Region
+
+
+
+#Region "SSIS"
+    Public Class SSISParam
+        Public Nom As Object
+        Public valeur As String
+        Public type As String
+
+        Public Sub New(ByVal leNom As Object, ByVal laValeur As String, leType As String)
+            Nom = leNom
+            valeur = laValeur
+            type = leType ' PROJET / PACKAGE
+        End Sub
+
+        Public Overrides Function ToString() As String
+            Return valeur
+        End Function
+    End Class
+
+    Function SSISexecute(leProjet As String, lepackage As String) As Boolean
+        Dim ExecOK As Boolean = True
+        Dim leMSG As String = ""
+
+        Try
+            '"Data Source=" & My.Settings.SSISServer & ";Initial Catalog=master;Integrated Security=SSPI;Connection Timeout=300;"
+            'Dim ssisConnection As New SqlConnection("Data Source=" & My.Settings.SSISServer & ";Initial Catalog=master;Connection Timeout=300;Persist Security Info=True;Password=Bgt56yhN;User ID=KEP\cssql2017;")
+
+            Dim ssisConnection As New SqlConnection("Data Source=sqlc1;Initial Catalog=master;Password=M@iali;User ID=KEP\lvalcasara;Connection Timeout=300;")
+            Dim ssisServer As New IntegrationServices(ssisConnection)
+            Dim ssisPackage As PackageInfo = ssisServer.Catalogs("SSISDB").Folders("DataWH").Projects(leProjet).Packages(lepackage)
+            Dim executionParameters As New Collection(Of PackageInfo.ExecutionValueParameterSet)
+            'Dim executionParameter As New PackageInfo.ExecutionValueParameterSet
+            '            executionParameter.ObjectType = 50
+            '            executionParameter.ParameterName = "SYNCHRONIZED"
+            '            executionParameter.ParameterValue = 1
+            '            executionParameters.Add(executionParameter)
+
+
+
+            Dim executionIdentifier As Long = ssisPackage.Execute(True, Nothing, executionParameters)
+            Dim ExecutionOperation As ExecutionOperation = ssisServer.Catalogs("SSISDB").Executions(executionIdentifier)
+            While Not ExecutionOperation.Completed
+                ExecutionOperation.Refresh()
+                System.Threading.Thread.Sleep(2000)
+            End While
+
+            For Each message As OperationMessage In ssisServer.Catalogs("SSISDB").Executions(executionIdentifier).Messages
+                If message.MessageType = 120 Or message.MessageType = 140 Then ExecOK = False
+                leMSG += Chr(10) + (message.MessageType.ToString() + ": " + message.Message)
+            Next
+
+            If Not ExecOK Then
+                MsgBox(leMSG)
+                '   F_Notif.tMSG.Text = leMSG
+                '  F_Notif.ShowDialog()
+            End If
+        Catch ex As Exception
+            ExecOK = False
+            MsgBox(ex.Message)
+        Finally
+        End Try
+
+        Return ExecOK
+    End Function
+
 #End Region
 
 End Module

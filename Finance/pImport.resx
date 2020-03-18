@@ -117,23 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="compte.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\compte.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="processCube.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\processCube.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bimport.fw32x32.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bimport.fw32x32.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sites.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sites.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ilot.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ilot.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Param2.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Param2.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="i_info.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        nAAADpwBB5RT3QAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAALbSURBVEhL
+        pZVJUxpBGIb5S8lRK7mncge55JDKPfkVHD2lglhCXFgUNIBBwIxsimxxmUppkTCK4gaIZBBUVJQv/bXV
+        aEPjJYeHmpp+++mvm+4eDQBwGI12SiKxofP5wsrUlKc1MuKAp1it3ha2kYyW5bs9nQcWSKXkQZcrqJpM
+        0+B2/wBZzoKq1uH+vg03Ny0ol89gbW0LnM4AHWR2Nqhin+4BOGksljFYLLPtmRk/FIsVuLu7p+x7vDD/
+        4iUFn9n7o6MyuFwBMJtdbewrFEejaQNWGQolodG4gtvbuw7Sm7cdsf/Va64NCYdTtHp0sCLpTzK5OYCV
+        klHpdLtJffzUEcfff+hpv7y8BklapZUnEpt0WaiYTEfFKalqA5rN2x4alSr8GZ+Erc9f6LMoc3HRBJvt
+        Oy6NSsWx2E8dTmN394iMfPNf5HIFGB2dhuXlNa3G6w0p+Gc1Gk0y6rWQdzo9hyjDQBc6NRMT7lY6/Qvq
+        9WZf9Ho9hyjDWFlZh8lJTwvXGAqFMtRqV30ZGhriEGUYudwB3SFUrKpXz6LT6ThEGcbp6fmjuFq9fJbh
+        4WEOUYZRLNYexYVCBSqVi76YzWYOUYaxvb33IB4fd7ficZlModEXo9HIIcowwuEM4IbQzM1JO3a7D05O
+        alAq1YVYLBYOUYZhtc4DcSoaSUppsXRZ3iHrcy4kGo1yiDKILCtgMjnI8U5p6ZF2OBZUrDqfL8Pxca2H
+        brEos79/hksA6EInFS8tpQfGxlxtn28ZDg/VHiKRCEd3O0q93gigQ5LSD5cQuzb9/rgBl8TjCYOilODg
+        4G+HbvHTtr29CvkghOhOQAe6ODGysLBiwFHJToH1dYVUUu1LPl+BdDpLjq+XVOpsY190cBc9AxsWF5OD
+        NpuPfpqwUzCYgI2NHXJUS5DNHkMm8xsCgVWynh5apd2+oGIfVpxQjLAA6ax1OheVr1+/9XxM8R22YaZb
+        +ABo/gFUfh13/KqvHQAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

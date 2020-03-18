@@ -26,11 +26,11 @@ Partial Class pFinance
         Me.label10 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tInit = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.i_info = New System.Windows.Forms.ToolStripStatusLabel()
         Me.bEnreg = New System.Windows.Forms.Button()
         Me.bCompte = New System.Windows.Forms.Button()
         Me.bIllot = New System.Windows.Forms.Button()
         Me.bSite = New System.Windows.Forms.Button()
+        Me.i_info = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,7 +47,7 @@ Partial Class pFinance
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(22, 22)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tInit, Me.i_info})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 609)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 389)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(156, 27)
         Me.StatusStrip1.TabIndex = 25
@@ -59,19 +59,6 @@ Partial Class pFinance
         Me.tInit.Name = "tInit"
         Me.tInit.Size = New System.Drawing.Size(24, 22)
         Me.tInit.Text = "init"
-        '
-        'i_info
-        '
-        Me.i_info.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.i_info.Image = CType(resources.GetObject("i_info.Image"), System.Drawing.Image)
-        Me.i_info.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.i_info.IsLink = True
-        Me.i_info.Name = "i_info"
-        Me.i_info.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.i_info.Size = New System.Drawing.Size(117, 22)
-        Me.i_info.Spring = True
-        Me.i_info.Tag = ""
-        Me.i_info.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'bEnreg
         '
@@ -123,6 +110,19 @@ Partial Class pFinance
         Me.bSite.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.bSite.UseVisualStyleBackColor = True
         '
+        'i_info
+        '
+        Me.i_info.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.i_info.Image = CType(resources.GetObject("i_info.Image"), System.Drawing.Image)
+        Me.i_info.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.i_info.IsLink = True
+        Me.i_info.Name = "i_info"
+        Me.i_info.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.i_info.Size = New System.Drawing.Size(86, 22)
+        Me.i_info.Spring = True
+        Me.i_info.Tag = ""
+        Me.i_info.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'pFinance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -134,7 +134,7 @@ Partial Class pFinance
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.label10)
         Me.Name = "pFinance"
-        Me.Size = New System.Drawing.Size(156, 636)
+        Me.Size = New System.Drawing.Size(156, 416)
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)

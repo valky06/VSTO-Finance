@@ -135,6 +135,16 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.IntegrationServices, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.SqlServer.Management.IntegrationServices\11.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.Management.IntegrationServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.IntegrationServicesEnum, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.SqlServer.Management.IntegrationServicesEnum\11.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.Management.IntegrationServicesEnum.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -203,10 +213,22 @@
     <Compile Include="fParam.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="f_import.Designer.vb">
+      <DependentUpon>f_import.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_import.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="pFinance.Designer.vb">
       <DependentUpon>pFinance.vb</DependentUpon>
     </Compile>
     <Compile Include="pFinance.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pImport.Designer.vb">
+      <DependentUpon>pImport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pImport.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="XLFinance.vb">
@@ -221,8 +243,14 @@
     <EmbeddedResource Include="fParam.resx">
       <DependentUpon>fParam.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="f_import.resx">
+      <DependentUpon>f_import.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pFinance.resx">
       <DependentUpon>pFinance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pImport.resx">
+      <DependentUpon>pImport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rFinance.resx">
       <DependentUpon>rFinance.vb</DependentUpon>
@@ -276,6 +304,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Param.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import4.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bprocess.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\processCube.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bimport.fw32x32.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Param2.fw.png" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

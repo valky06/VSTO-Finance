@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="VueConStr" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Provider=SQLOLEDB.1;Persist Security Info=True;Password=!KEP@Erp2019;User ID=Tarif_U;Server=dmssqlc1\app;Database=Compta;Persist Security Info=True;</Value>
+      <Value Profile="(Default)">Provider=SQLOLEDB.1;Persist Security Info=True;Password=Bgt56yhN;User ID=cssql2017;Server=dmssqlc1\app;Database=Compta;Persist Security Info=True;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

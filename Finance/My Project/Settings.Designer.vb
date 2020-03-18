@@ -55,8 +55,8 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("Provider=SQLOLEDB.1;Persist Security Info=True;Password=!KEP@Erp2019;User ID=Tari"& _ 
-        "f_U;Server=dmssqlc1\app;Database=Compta;Persist Security Info=True;")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Provider=SQLOLEDB.1;Persist Security Info=True;Password=Bgt56yhN;User ID=cssql201"& _ 
+        "7;Server=dmssqlc1\app;Database=Compta;Persist Security Info=True;")>  _
     Public Property VueConStr() As String
         Get
             Return CType(Me("VueConStr"),String)

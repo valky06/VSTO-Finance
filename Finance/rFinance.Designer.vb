@@ -43,8 +43,9 @@
     Private Sub InitializeComponent()
         Me.Tab1 = Me.Factory.CreateRibbonTab
         Me.Group1 = Me.Factory.CreateRibbonGroup
-        Me.Button2 = Me.Factory.CreateRibbonButton
         Me.Separator1 = Me.Factory.CreateRibbonSeparator
+        Me.Button2 = Me.Factory.CreateRibbonButton
+        Me.Button3 = Me.Factory.CreateRibbonButton
         Me.Button1 = Me.Factory.CreateRibbonButton
         Me.Tab1.SuspendLayout()
         Me.Group1.SuspendLayout()
@@ -60,26 +61,36 @@
         'Group1
         '
         Me.Group1.Items.Add(Me.Button2)
+        Me.Group1.Items.Add(Me.Button3)
         Me.Group1.Items.Add(Me.Separator1)
         Me.Group1.Items.Add(Me.Button1)
         Me.Group1.Label = "Finance"
         Me.Group1.Name = "Group1"
         '
-        'Button2
-        '
-        Me.Button2.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.Button2.Image = Global.TEMPLATE.My.Resources.Resources.compte_fw
-        Me.Button2.Label = "SIG"
-        Me.Button2.Name = "Button2"
-        Me.Button2.ShowImage = True
-        '
         'Separator1
         '
         Me.Separator1.Name = "Separator1"
         '
+        'Button2
+        '
+        Me.Button2.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button2.Image = Global.TEMPLATE.My.Resources.Resources.bimport_fw32x32_fw
+        Me.Button2.Label = "Import Quadra"
+        Me.Button2.Name = "Button2"
+        Me.Button2.ShowImage = True
+        '
+        'Button3
+        '
+        Me.Button3.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button3.Image = Global.TEMPLATE.My.Resources.Resources.processCube_fw
+        Me.Button3.Label = "Traitement Cube"
+        Me.Button3.Name = "Button3"
+        Me.Button3.ShowImage = True
+        '
         'Button1
         '
-        Me.Button1.Image = Global.TEMPLATE.My.Resources.Resources.Param_fw
+        Me.Button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button1.Image = Global.TEMPLATE.My.Resources.Resources.Param2_fw
         Me.Button1.Label = "Paramètres"
         Me.Button1.Name = "Button1"
         Me.Button1.ShowImage = True
@@ -102,6 +113,7 @@
     Friend WithEvents Button1 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Button2 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Separator1 As Microsoft.Office.Tools.Ribbon.RibbonSeparator
+    Friend WithEvents Button3 As Microsoft.Office.Tools.Ribbon.RibbonButton
 End Class
 
 Partial Class ThisRibbonCollection
